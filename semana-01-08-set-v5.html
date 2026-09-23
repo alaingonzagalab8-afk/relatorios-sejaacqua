@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semana 01–08 · Setembro 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --plane:#f5f8f7; --surface:#fcfcfb; --surface-2:#eef2f1;
+  --ink:#0b0b0b; --ink-2:#4e5250; --muted:#878b89;
+  --grid:#e0e4e2; --axis:#c1c6c4; --border:rgba(11,11,11,.11);
+  --blue:#2a78d6; --aqua:#1baf7a; --orange:#eb6834;
+  --good:#0ca30c; --warn:#fab219; --crit:#d03b3b;
+  --good-ink:#006300; --crit-ink:#a52a2a; --warn-ink:#8a6000;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --plane:#0c0e0d; --surface:#1a1a19; --surface-2:#232524;
+    --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2e2c; --axis:#383835; --border:rgba(255,255,255,.12);
+    --blue:#3987e5; --aqua:#199e70; --orange:#d95926;
+    --good-ink:#0ca30c; --crit-ink:#e66767; --warn-ink:#fab219;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#0c0e0d; --surface:#1a1a19; --surface-2:#232524;
+  --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2e2c; --axis:#383835; --border:rgba(255,255,255,.12);
+  --blue:#3987e5; --aqua:#199e70; --orange:#d95926;
+  --good-ink:#0ca30c; --crit-ink:#e66767; --warn-ink:#fab219;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--plane);color:var(--ink);
+ font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:32px 60px}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+header{padding-bottom:20px;border-bottom:2px solid var(--ink);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+h1{font-size:clamp(26px,5vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.hmeta{font-size:12.5px;color:var(--ink-2);max-width:38ch}
+.thesis{margin:26px 0 30px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:26px 40px;align-items:center}
+.thesis p{margin:0;font-size:15.5px;color:var(--ink-2);max-width:none;line-height:1.6}
+.thesis strong{color:var(--ink);font-weight:600}
+.big-n{font-family:Archivo,sans-serif;font-weight:700;letter-spacing:-.03em;font-size:56px;line-height:1;color:var(--good-ink)}
+.big-cap{font-size:12px;color:var(--ink-2);font-family:"IBM Plex Mono",monospace;margin-top:6px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.kpi{background:var(--surface);padding:15px 17px 17px;display:flex;flex-direction:column;gap:3px}
+.kpi-l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kpi-v{font-family:Archivo,sans-serif;font-size:24px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi-s{font-size:11.5px;color:var(--ink-2);font-family:"IBM Plex Mono",monospace}
+section{margin-top:42px}
+h2{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:4px}
+.note{font-size:13px;color:var(--ink-2);margin:0 0 16px;max-width:none;line-height:1.6}
+.tbl{overflow-x:auto;border:1px solid var(--border);border-radius:3px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+th,td{padding:9px 13px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+td{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+td.name{font-family:"IBM Plex Sans",sans-serif}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--surface-2)}
+tr.hl td{background:color-mix(in srgb,var(--crit) 8%,var(--surface));font-weight:600}
+tr.ok td{background:color-mix(in srgb,var(--aqua) 8%,var(--surface));font-weight:600}
+tr.vazia td{color:var(--muted);font-style:italic}
+tfoot td{border-top:2px solid var(--axis);border-bottom:none;font-weight:600;background:var(--surface-2)}
+.bar-cell{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.bar{height:9px;border-radius:0 2px 2px 0;flex:none;background:var(--blue)}
+.bar.c{background:var(--crit)} .bar.g{background:var(--aqua)} .bar.o{background:var(--orange)}
+blockquote{margin:0;padding:18px 22px;line-height:1.6;background:var(--surface);border-left:3px solid var(--orange);border-radius:0 3px 3px 0;font-size:14.5px;color:var(--ink)}
+blockquote:not(:last-child){margin-bottom:14px}
+blockquote.g{border-left-color:var(--aqua)}
+blockquote.c{border-left-color:var(--crit)}
+blockquote.b{border-left-color:var(--blue)}
+blockquote .src{display:block;margin-top:8px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.destaque{border:1px solid var(--blue);border-left-width:4px;border-radius:3px;background:color-mix(in srgb,var(--blue) 5%,var(--surface));padding:16px 20px;margin-top:16px}
+.destaque h3{font-size:15px;font-weight:600;font-family:Archivo,sans-serif;margin-bottom:6px;color:var(--blue)}
+.destaque p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.destaque p+p{margin-top:8px}
+.cav{border-left:3px solid var(--axis);padding:2px 0 2px 15px;margin-bottom:13px}
+.cav h3{font-size:13.5px;font-weight:600;font-family:"IBM Plex Sans",sans-serif;margin-bottom:3px}
+.cav p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.6}
+.cavs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px 24px}
+.legenda{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:12px;color:var(--ink-2);margin-top:14px}
+.legenda span{display:inline-flex;align-items:center;gap:6px}
+.seta{font-family:"IBM Plex Mono",monospace;font-weight:600}
+.up{color:var(--good-ink)} .down{color:var(--crit-ink)} .neu{color:var(--muted)}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);font-family:"IBM Plex Mono",monospace;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:720px){.thesis{grid-template-columns:1fr;gap:18px}.big-n{font-size:46px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <p class="eyebrow">Seja Acqua · Mídia Paga · 01 a 08 de setembro</p>
+    <h1>01 a 08 de setembro</h1>
+  </div>
+  <p class="hmeta">Primeira semana da série. Tem 8 dias porque absorve o dia 01; as seguintes terão 7.</p>
+</header>
+
+<div class="thesis">
+  <p>A semana captou <strong>373 leads</strong> com <strong>R$ 10.995</strong>, gerou <strong>1 contrato</strong> e terminou <strong>30% mais barata do que começou</strong> — o custo por lead caiu de R$ 30,41 na segunda-feira para R$ 21,29 na última. A campanha mais eficiente entregou avanço a <strong>R$ 349</strong>.</p>
+  <div>
+    <div class="big-n">−30%</div>
+    <p class="big-cap">no custo por lead, do primeiro ao último dia da semana</p>
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><span class="kpi-l">Investimento</span><span class="kpi-v">R$ 10.995</span><span class="kpi-s">R$ 1.374 / dia</span></div>
+  <div class="kpi"><span class="kpi-l">Leads</span><span class="kpi-v">373</span><span class="kpi-s">46,6 / dia</span></div>
+  <div class="kpi"><span class="kpi-l">Custo por lead</span><span class="kpi-v">R$ 29,48</span><span class="kpi-s">média dos 8 dias</span></div>
+  <div class="kpi"><span class="kpi-l">Negócios no CRM</span><span class="kpi-v">395</span></div>
+  <div class="kpi"><span class="kpi-l">Desqualificados</span><span class="kpi-v">27,1%</span><span class="kpi-s">107 negócios · em 21/09</span></div>
+  <div class="kpi"><span class="kpi-l">Contratos</span><span class="kpi-v" style="color:var(--good-ink)">1</span><span class="kpi-s">R$ 1.000 · Contratos CCB</span></div>
+</div>
+
+<section>
+  <h2>A semana, dia a dia</h2>
+  <p class="note">O custo por lead caiu ao longo da semana, de R$ 30,41 na segunda-feira para R$ 21,29 na terça seguinte. Dois dias fogem do padrão e estão marcados abaixo.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Dia</th><th></th><th>Investimento</th><th>Leads</th><th>Custo por lead</th></tr></thead>
+      <tbody>
+        <tr><td class="name">01/09</td><td class="name" style="color:var(--muted)">segunda</td><td>R$ 1.429,25</td><td>47</td><td>R$ 30,41</td></tr>
+        <tr><td class="name">02/09</td><td class="name" style="color:var(--muted)">terça</td><td>R$ 1.334,70</td><td>41</td><td>R$ 32,55</td></tr>
+        <tr><td class="name">03/09</td><td class="name" style="color:var(--muted)">quarta</td><td>R$ 1.588,16</td><td>53</td><td>R$ 29,97</td></tr>
+        <tr><td class="name">04/09</td><td class="name" style="color:var(--muted)">quinta</td><td>R$ 1.379,77</td><td>46</td><td>R$ 30,00</td></tr>
+        <tr class="hl"><td class="name">05/09</td><td class="name" style="color:var(--muted)">sexta</td><td>R$ 1.463,92</td><td>36</td><td>R$ 40,66</td></tr>
+        <tr><td class="name">06/09</td><td class="name" style="color:var(--muted)">sábado</td><td>R$ 1.958,57</td><td>71</td><td>R$ 27,59</td></tr>
+        <tr><td class="name">07/09</td><td class="name" style="color:var(--muted)">domingo · feriado</td><td>R$ 1.266,00</td><td>52</td><td>R$ 24,35</td></tr>
+        <tr class="hl"><td class="name">08/09</td><td class="name" style="color:var(--muted)">segunda</td><td>R$ 574,83</td><td>27</td><td>R$ 21,29</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total · 8 dias</td><td></td><td>R$ 10.995,20</td><td>373</td><td>R$ 29,48</td></tr></tfoot>
+    </table>
+  </div>
+  <p class="note" style="margin-top:14px"><strong style="color:var(--ink)">05/09 — o dia mais caro, e não foi por falta de verba.</strong> O investimento de sexta (R$ 1.464) foi praticamente o mesmo da quinta (R$ 1.380) e menor que o do sábado (R$ 1.959). Mesmo assim entregou 36 leads, o menor número da semana. Mesmo dinheiro, menos resultado: foi um dia ruim de entrega, não de orçamento.<br><br><strong style="color:var(--ink)">08/09 — a verba caiu pela metade.</strong> Foram R$ 575, contra R$ 1.266 no domingo e R$ 1.992 na terça seguinte. A redução aconteceu igual em todos os públicos ao mesmo tempo e o preço da impressão não subiu. Isso descarta concorrência no leilão e aponta para uma trava na própria conta — limite de gasto ou faturamento.<br><br><strong style="color:var(--ink)">07/09 — feriado entregou o segundo melhor custo da semana.</strong> R$ 24,35 por lead. Nesta conta, feriado não é motivo para reduzir verba.</p>
+</section>
+
+<section>
+  <h2>Quanto cada campanha custou</h2>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Campanha</th><th>Investimento</th><th>Leads</th><th>Custo / lead</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Amplo Sudeste</td><td>R$ 2.532</td><td>138</td><td style="color:var(--good-ink);font-weight:600">R$ 18,35</td></tr>
+        <tr><td class="name">Advantage</td><td>R$ 3.437</td><td>135</td><td>R$ 25,46</td></tr>
+        <tr><td class="name">LLA</td><td>R$ 1.592</td><td>42</td><td>R$ 37,91</td></tr>
+        <tr><td class="name">LLA 30k e Ativos</td><td>R$ 990</td><td>21</td><td>R$ 47,13</td></tr>
+        <tr><td class="name">LLA (parada dia 9)</td><td>R$ 2.444</td><td>37</td><td style="color:var(--crit-ink)">R$ 66,05</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>R$ 10.995</td><td>373</td><td>R$ 29,48</td></tr></tfoot>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>O que cada campanha rendeu</h2>
+  <p class="note"><strong style="color:var(--ink)">Avançaram</strong> = negócios que chegaram a Reunião Agendada ou etapa posterior. Dados do CRM, <strong style="color:var(--ink)">apurados em 17/09</strong> e não atualizados nesta revisão — nenhuma campanha registrou avanço novo desde então.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Campanha</th><th>Negócios</th><th>Contratos</th><th>Avançaram</th><th>Taxa de avanço</th><th>Custo / avanço</th><th>Desqualif.</th><th>Taxa de desq.</th></tr></thead>
+      <tbody>
+        <tr class="ok"><td class="name">LLA (parada dia 9)</td><td>42</td><td style="color:var(--good-ink);font-weight:600">1</td><td>7</td><td style="color:var(--good-ink);font-weight:600">16,7%</td><td style="color:var(--good-ink);font-weight:600">R$ 349</td><td>6</td><td style="color:var(--good-ink);font-weight:600">14,3%</td></tr>
+        <tr><td class="name">Advantage</td><td>149</td><td>0</td><td>4</td><td>2,7%</td><td>R$ 859</td><td>48</td><td style="color:var(--crit-ink);font-weight:600">32,2%</td></tr>
+        <tr><td class="name">Amplo Sudeste</td><td>136</td><td>0</td><td>2</td><td>1,5%</td><td style="color:var(--crit-ink)">R$ 1.266</td><td>32</td><td>23,5%</td></tr>
+        <tr><td class="name">LLA</td><td>46</td><td>0</td><td>0</td><td>0%</td><td>—</td><td>13</td><td style="color:var(--crit-ink)">28,3%</td></tr>
+        <tr><td class="name">LLA 30k e Ativos</td><td>22</td><td>0</td><td>0</td><td>0%</td><td>—</td><td>6</td><td>27,3%</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>395</td><td>1</td><td>13</td><td>3,3%</td><td>R$ 846</td><td>105</td><td>26,6%</td></tr></tfoot>
+    </table>
+  </div>
+  <p class="note" style="margin-top:14px">O contrato da semana veio da <strong style="color:var(--ink)">LLA (parada dia 9)</strong> — a campanha com o lead mais caro (R$ 66,05) e, ao mesmo tempo, a melhor em avanço, em custo por avanço e em taxa de desqualificação. Ela saiu do ar em 09/09.</p>
+
+  <h3 style="font-size:15px;margin-top:30px;margin-bottom:4px">O contrato da semana</h3>
+  <p class="note" style="margin-top:6px">Registro único, identificado pelo ID no CRM para conferência.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Contact ID</th><th>Deal ID</th><th>Entrada do lead</th><th>Campanha</th><th>Pipeline / etapa</th><th>Valor</th></tr></thead>
+      <tbody>
+        <tr class="ok"><td>246911941476</td><td>64993741078</td><td>07/09 · 05:01</td><td class="name">LLA (parada dia 9)</td><td class="name">Contratos CCB · Novo</td><td>R$ 1.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:14px">O mesmo contato tem um segundo registro no pipeline de Vendas — <span class="mono">Deal 64720020848</span>, parado em Relacionamento Pós-Agenda. O contrato de R$ 1.000 está no pipeline <strong style="color:var(--ink)">Contratos CCB, etapa "Novo", sem data de fechamento preenchida</strong>. É um contrato registrado; a etapa seguinte do pipeline é "Vigente".</p>
+  <p class="note" style="margin-top:10px"><strong style="color:var(--ink)">Verificado em 21/09:</strong> o contrato segue na etapa "Novo", sem data de fechamento, quatro dias depois da apuração anterior. Não avançou para "Vigente" e não teve alteração registrada no período.</p>
+</section>
+
+<section>
+  <h2>Os públicos</h2>
+  <p class="note">Cobertura de <strong style="color:var(--ink)">97,5%</strong> — o CRM registra o público de origem em 385 dos 395 negócios da semana. <strong style="color:var(--ink)">Quadro apurado em 17/09</strong> e não atualizado nesta revisão. <strong style="color:var(--ink)">Quer crédito</strong> = desqualificados com motivo "Empréstimo" ou "Capital de giro".</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Público</th><th>Negócios</th><th>Desqualif.</th><th>% desq.</th><th>Quer crédito</th><th>% crédito</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name mono">INTER-INVEST</td><td>87</td><td>32</td><td style="color:var(--crit-ink);font-weight:600">36,8%</td><td>19</td><td style="color:var(--crit-ink);font-weight:600">21,8%</td></tr>
+        <tr><td class="name mono">LAL-100K SP</td><td>86</td><td>19</td><td>22,1%</td><td>9</td><td>10,5%</td></tr>
+        <tr class="ok"><td class="name mono">AMPLO — 3 e 4</td><td>78</td><td>16</td><td style="color:var(--good-ink);font-weight:600">20,5%</td><td>7</td><td style="color:var(--good-ink);font-weight:600">9,0%</td></tr>
+        <tr><td class="name mono">COMPORT-EMPRESARIO</td><td>66</td><td>16</td><td>24,2%</td><td>9</td><td>13,6%</td></tr>
+        <tr><td class="name mono">AMPLO — 5 a 7</td><td>41</td><td>12</td><td>29,3%</td><td>6</td><td>14,6%</td></tr>
+        <tr><td class="name mono">LAL-ATIVOS</td><td>21</td><td>6</td><td>28,6%</td><td>3</td><td>14,3%</td></tr>
+        <tr class="vazia"><td class="name mono">AMPLO — 1 e 2</td><td>6</td><td>3</td><td>50,0%</td><td>1</td><td>16,7%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:14px">O <span class="mono">INTER-INVEST</span>, que lidera em volume de leads, é o que mais atrai quem busca crédito — <strong style="color:var(--ink)">21,8%</strong>, mais que o dobro do público amplo. O interesse declarado em investimento não garante o perfil certo.</p>
+</section>
+
+<section>
+  <h2>Onde esses leads estão hoje</h2>
+  <p class="note">Situação em <strong style="color:var(--ink)">21 de setembro</strong> dos 395 negócios gerados pelos leads desta semana.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Etapa registrada</th><th>Negócios</th><th>% do total</th><th>Var. vs 17/09</th><th>Fichas editadas 18 a 21/09</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">Primeiro Contato</td><td>256</td><td>64,8%</td><td>−1</td><td><strong>152</strong> <span style="color:var(--muted)">· 59,4%</span></td></tr>
+        <tr><td class="name">Desqualificado</td><td>107</td><td>27,1%</td><td><strong>+2</strong></td><td>2 <span style="color:var(--muted)">· 1,9%</span></td></tr>
+        <tr><td class="name">Em Andamento / WPP</td><td>17</td><td>4,3%</td><td>−1</td><td>10 <span style="color:var(--muted)">· 58,8%</span></td></tr>
+        <tr><td class="name">Reunião Agendada</td><td>6</td><td>1,5%</td><td>—</td><td>5 <span style="color:var(--muted)">· 83,3%</span></td></tr>
+        <tr><td class="name">Relacionamento Pós-Agenda</td><td>4</td><td>1,0%</td><td>—</td><td>3 <span style="color:var(--muted)">· 75,0%</span></td></tr>
+        <tr><td class="name">Reunião Não Realizada</td><td>2</td><td>0,5%</td><td>—</td><td>0</td></tr>
+        <tr><td class="name">Cadastro</td><td>1</td><td>0,3%</td><td>—</td><td>0</td></tr>
+        <tr><td class="name">Novo</td><td>1</td><td>0,3%</td><td>—</td><td>0</td></tr>
+        <tr class="ok"><td class="name">Contrato registrado <span style="color:var(--muted);font-weight:400">· Contratos CCB</span></td><td>1</td><td>0,3%</td><td>—</td><td>0</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>395</td><td>100%</td><td>—</td><td>172 · 43,5%</td></tr></tfoot>
+    </table>
+  </div>
+  <p class="note" style="margin-top:12px;font-size:12.5px"><strong style="color:var(--ink)">Negócios</strong> = situação em 21/09. <strong style="color:var(--ink)">% do total</strong> = participação nos 395. <strong style="color:var(--ink)">Var.</strong> = diferença contra a apuração anterior, de 17/09. <strong style="color:var(--ink)">Fichas editadas</strong> = negócios que tiveram alteração salva nos quatro dias, com a proporção dentro da própria etapa. Não é entrada na etapa, nem acumulado desde o início.</p>
+
+  <div class="destaque">
+    <h3>Estão mexendo e não estão avançando</h3>
+    <p><strong>Em quatro dias, 172 dos 395 negócios tiveram a ficha alterada</strong> — incluindo 152 dos 256 que estão parados em "Primeiro Contato", quase seis em cada dez. O time está trabalhando esses leads.</p>
+    <p><strong>Mas as duas únicas mudanças de etapa foram para Desqualificado</strong>, ambas em 21/09. Reunião Agendada, Relacionamento Pós-Agenda e Contrato ficaram exatamente nos mesmos números de 17/09.</p>
+  </div>
+
+  <div class="destaque c">
+    <h3>E a alteração não foi registro de atendimento</h3>
+    <p>O CRM contabiliza atividade de vendas — ligação, e-mail, reunião — em apenas <strong>1,7% dos negócios de mídia</strong>. O índice é praticamente idêntico ao das outras origens da empresa (1,5%), então não é uma questão de os leads de mídia receberem tratamento diferente.</p>
+    <p><strong>Nenhum negócio tem próxima ação agendada.</strong> E em <strong>96,3% das edições</strong>, nem a etapa, nem o motivo de perda, nem os dados do contato foram alterados — a mudança foi em algum campo que não identificamos.</p>
+    <p>Enquanto ligação e e-mail não forem registrados, <strong>não existe como verificar se o lead foi atendido</strong> — nem para a mídia, nem para o próprio comercial. Motivos como "Sem interesse" e "Nunca respondeu" seguem sem lastro que possa ser conferido.</p>
+  </div>
+
+  <div class="destaque c">
+    <h3>E também não há nada escrito sobre esses leads</h3>
+    <p>Além do registro de atendimento, o CRM permite anotações livres — onde o vendedor descreve a conversa. <strong>Numa amostra de 50 dos leads parados em "Primeiro Contato", apenas 1 tem anotação.</strong> Ela diz, em 07/09: <span class="mono">"cxp, wpp"</span> — caixa postal, WhatsApp.</p>
+    <p>Esse recurso está em uso na operação: só entre 21 e 23 de setembro foram <strong>118 anotações</strong> registradas na conta. Mas elas estão nos leads recentes, não nos desta semana.</p>
+    <p>O quadro fica completo assim: as fichas <strong>são editadas</strong> — 152 dos 256 em quatro dias — mas <strong>ninguém escreve o que aconteceu na conversa</strong>. Não é ausência de esforço; é ausência de registro. E sem registro, nem a mídia nem a liderança comercial conseguem saber onde o lead travou.</p>
+  </div>
+
+  <p class="note" style="margin-top:16px"><strong style="color:var(--ink)">Reuniões não realizadas:</strong> 3 casos na semana, todos por não comparecimento do lead — nenhum cancelamento ou remarcação.</p>
+</section>
+
+<section>
+  <h2>Por que os leads foram desqualificados</h2>
+  <p class="note">107 negócios da semana foram desqualificados com motivo registrado, situação em <strong style="color:var(--ink)">21 de setembro</strong>.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Motivo</th><th>Negócios</th><th>%</th><th>Var. vs 17/09</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name">Empréstimo</td><td><div class="bar-cell"><span>52</span><span class="bar c" style="width:96px"></span></div></td><td>48,6%</td><td>—</td></tr>
+        <tr><td class="name">Sem interesse</td><td><div class="bar-cell"><span>29</span><span class="bar" style="width:54px"></span></div></td><td>27,1%</td><td>—</td></tr>
+        <tr><td class="name">Nunca respondeu</td><td><div class="bar-cell"><span>8</span><span class="bar" style="width:15px"></span></div></td><td>7,5%</td><td><strong>+1</strong></td></tr>
+        <tr><td class="name">Momento ruim</td><td><div class="bar-cell"><span>7</span><span class="bar" style="width:13px"></span></div></td><td>6,5%</td><td>—</td></tr>
+        <tr><td class="name">Parou de responder</td><td><div class="bar-cell"><span>5</span><span class="bar" style="width:10px"></span></div></td><td>4,7%</td><td><strong>+1</strong></td></tr>
+        <tr class="hl"><td class="name">Capital de giro</td><td><div class="bar-cell"><span>2</span><span class="bar c" style="width:4px"></span></div></td><td>1,9%</td><td>—</td></tr>
+        <tr><td class="name">Blacklist</td><td><div class="bar-cell"><span>2</span><span class="bar" style="width:4px"></span></div></td><td>1,9%</td><td>—</td></tr>
+        <tr><td class="name">Dados inválidos</td><td><div class="bar-cell"><span>2</span><span class="bar" style="width:4px"></span></div></td><td>1,9%</td><td>—</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>107</td><td>100%</td><td>+2</td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="destaque" style="border-color:var(--crit);background:color-mix(in srgb,var(--crit) 5%,var(--surface))">
+    <h3 style="color:var(--crit-ink)">Mais da metade dos desqualificados queria tomar crédito</h3>
+    <p><strong>54 dos 107 desqualificados — 50,5%</strong> — foram descartados por "Empréstimo" (52) ou "Capital de giro" (2). É o maior motivo isolado da semana, quase o dobro de "Sem interesse".</p>
+    <p><strong>Os dois novos descartes dos últimos quatro dias foram "Nunca respondeu" e "Parou de responder".</strong> Nenhum por perfil errado — o que indica que o problema de qualificação está concentrado na entrada do lead e não se agrava com o tempo.</p>
+    <p><strong>O que o dado já descarta: não é a segmentação.</strong> A busca por crédito aparece em todas as cinco campanhas (de 33% a 58% dos descartes) e em todos os sete públicos (de 9% a 22% dos leads). Um problema que está em toda parte não vem de uma escolha de público específica — vem de algo comum a todas elas.</p>
+    <p><strong>O que o dado ainda não identifica: qual é esse elemento comum.</strong> Os candidatos são a mensagem do anúncio, o formulário (que hoje não faz pergunta de qualificação) e o próprio reconhecimento da marca. O CRM registrou o anúncio de origem em apenas <strong>2 dos 395 negócios</strong> desta semana, o que impede medir criativo por criativo neste período.</p>
+    <p><strong>Isso deixa de ser um ponto cego a partir de 16/09:</strong> o registro do anúncio no CRM passou a funcionar nessa data. O relatório da semana de 16 a 22 de setembro será o primeiro capaz de medir o motivo de desqualificação por criativo — e de transformar a hipótese em resposta.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Leitura</h2>
+  <blockquote class="g">
+    A semana barateou enquanto rodava: o custo por lead caiu 30% do primeiro ao último dia, e o feriado de 07/09 entregou o segundo melhor custo de todos. A conta está aprendendo, e não há indício de saturação de público.
+    <span class="src">O que funcionou</span>
+  </blockquote>
+  <blockquote class="b">
+    A campanha com o lead mais caro da semana — LLA parada, R$ 66,05 — foi a única que gerou contrato e a melhor em todos os indicadores de qualidade: 16,7% de avanço, R$ 349 por avanço e a menor taxa de desqualificação. Isso mostra que lead barato e lead bom não são a mesma coisa, e que o custo por lead sozinho é um critério fraco de decisão.
+    <span class="src">O aprendizado mais útil da semana</span>
+  </blockquote>
+  <blockquote class="c">
+    Mais da metade dos leads descartados queria tomar crédito, não investir. O padrão atravessa todas as campanhas e todos os públicos, o que descarta a segmentação como causa. Qual é a causa exata ainda não dá para medir nesta semana — mas passa a dar a partir de 16/09.
+    <span class="src">O que precisa ser corrigido</span>
+  </blockquote>
+  <blockquote>
+    Os leads estão sendo trabalhados — 59% dos que seguem em "Primeiro Contato" tiveram a ficha editada em quatro dias — mas nenhum avançou de etapa. E o CRM registra atendimento em apenas 1,7% dos negócios, índice igual ao das outras origens da empresa. Enquanto ligação e e-mail não forem registrados, a mídia continua otimizando pelo único sinal disponível, que é o custo por lead.
+    <span class="src">O ponto cego</span>
+  </blockquote>
+</section>
+
+<section>
+  <h2>O que estes números não provam</h2>
+  <div class="cavs">
+    <div class="cav">
+      <h3>O motivo da desqualificação pode não refletir a conversa</h3>
+      <p>Entre os poucos negócios com anotação do vendedor, encontramos divergência: um lead descrito como <span class="mono">"já investe, buscou os nossos investimentos, vai começar semana"</span> está registrado como <strong>"Sem interesse"</strong>. Outro, descrito como <span class="mono">"já investe em bolsas"</span>, consta como "Momento ruim".</p>
+      <p>São 2 casos entre 11 anotações — amostra pequena demais para afirmar que é padrão. Mas, se for, a taxa de desqualificação mede preenchimento de campo e não realidade comercial. Merece conferência antes de virar base de decisão.</p>
+    </div>
+    <div class="cav">
+      <h3>Um contrato não define campanha vencedora</h3>
+      <p>Com um fechamento na semana, o dado de contrato não sustenta conclusão sobre qual campanha vende. O argumento se apoia no avanço e na desqualificação, onde a amostra é de dezenas.</p>
+    </div>
+    <div class="cav">
+      <h3>Estes leads já tiveram 13 a 20 dias de trabalho</h3>
+      <p>Os dados do CRM foram extraídos em 21 de setembro. Um lead que entrou no dia 01 teve 20 dias para ser atendido; um que entrou no dia 08 teve 13.</p>
+    </div>
+    <div class="cav">
+      <h3>Os avanços são poucos em números absolutos</h3>
+      <p>13 avanços em 395 negócios. Um ou dois a mais mudariam a ordem entre as campanhas. A leitura é direcional, não conclusiva.</p>
+    </div>
+    <div class="cav">
+      <h3>Parte das vendas pode não estar sendo contada</h3>
+      <p>Quando um lead de mídia é recadastrado pela operação, a origem se perde e a venda deixa de ser atribuída à campanha. O fechamento desta semana é piso, não teto.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Evolução semana a semana</h2>
+  <p class="note">Como as semanas podem ter durações diferentes, a coluna <strong style="color:var(--ink)">Dias</strong> fica sempre visível — os totais de investimento e leads dependem dela, mas custo por lead, desqualificação e crédito não.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Período</th><th>Dias</th><th>Investimento</th><th>Leads</th><th>Custo / lead</th><th>% desq.</th><th>% crédito</th><th>Contratos</th></tr></thead>
+      <tbody>
+        <tr><td class="name">01 a 08/09</td><td>8</td><td>R$ 10.995</td><td>373</td><td>R$ 29,48</td><td>27,1%</td><td>50,5%</td><td>1</td></tr>
+        <tr class="vazia"><td class="name">09 a 15/09</td><td>7</td><td colspan="6" style="text-align:left">ver relatório da semana seguinte</td></tr>
+        <tr class="vazia"><td class="name">16 a 22/09</td><td>7</td><td colspan="6" style="text-align:left">aguardando fechamento</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="legenda">
+    <span><span class="seta up">▲</span> / <span class="seta up">▼</span> variação positiva</span>
+    <span><span class="seta down">▲</span> / <span class="seta down">▼</span> variação negativa</span>
+    <span><span class="seta neu">▲ ▼ —</span> sem direção definida</span>
+  </div>
+  <p class="note" style="margin-top:14px">A seta indica para onde o número foi; a cor indica se isso é bom ou ruim. <strong style="color:var(--ink)">Investimento não recebe cor</strong> — gastar mais ou menos é decisão, não resultado. <strong style="color:var(--ink)">Desqualificação também não</strong>: uma alta pode significar lead pior ou mais triagem sendo feita, e o número sozinho não distingue os dois.</p>
+</section>
+
+<footer>
+  <span>Fontes: Meta Ads (01–08/09) · CRM — origem Paid Social, pipelines de Vendas e de Contratos</span>
+  <span>Situação do CRM em 21/09/2026 · versão 5</span>
+</footer>
+
+</div>
+</body>
+</html>
