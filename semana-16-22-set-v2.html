@@ -135,11 +135,11 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
   <p class="note">Esta é a única tabela do relatório que mostra variação — as demais trazem apenas o número da semana. Como as semanas podem ter durações diferentes, a coluna <strong style="color:var(--ink)">Dias</strong> fica sempre visível: os totais de investimento e leads dependem dela, mas custo por lead e taxas não.</p>
   <div class="tbl">
     <table>
-      <thead><tr><th>Período</th><th>Dias</th><th>Investimento</th><th>Leads</th><th>Custo / lead</th><th>% desq.</th><th>% crédito</th><th>Fechamentos</th></tr></thead>
+      <thead><tr><th>Período</th><th>Dias</th><th>Investimento</th><th>Leads</th><th>Custo / lead</th><th>% desq.</th><th>% crédito</th><th>Avançaram</th><th>% avançaram</th><th>Fechamentos</th></tr></thead>
       <tbody>
-        <tr><td class="name">01 a 08/09</td><td>8</td><td>R$ 10.995</td><td>373</td><td>R$ 29,48</td><td>27,1%</td><td>50,5%</td><td>1</td></tr>
-        <tr><td class="name">09 a 15/09</td><td>7</td><td>R$ 12.800</td><td>764</td><td>R$ 16,75</td><td>9,9%</td><td>50,6%</td><td>1</td></tr>
-        <tr><td class="name">16 a 22/09</td><td>7</td><td>R$ 10.268 <span class="neu seta">▼</span></td><td>570 <span class="down seta">▼</span></td><td>R$ 18,01 <span class="down seta">▲</span></td><td>10,8% <span class="neu seta">▲</span></td><td>40,3% <span class="up seta">▼</span></td><td>1 <span class="neu seta">—</span></td></tr>
+        <tr><td class="name">01 a 08/09</td><td>8</td><td>R$ 10.995</td><td>373</td><td>R$ 29,48</td><td>27,1%</td><td>50,5%</td><td>13</td><td>3,6%</td><td>2</td></tr>
+        <tr><td class="name">09 a 15/09</td><td>7</td><td>R$ 12.800</td><td>764</td><td>R$ 16,75</td><td>9,9%</td><td>50,6%</td><td>18</td><td>2,4%</td><td>1</td></tr>
+        <tr><td class="name">16 a 22/09</td><td>7</td><td>R$ 10.268 <span class="neu seta">▼</span></td><td>570 <span class="down seta">▼</span></td><td>R$ 18,01 <span class="down seta">▲</span></td><td>10,8% <span class="neu seta">▲</span></td><td>40,3% <span class="up seta">▼</span></td><td>7 <span class="down seta">▼</span></td><td>1,3% <span class="down seta">▼</span></td><td>0 <span class="down seta">▼</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -148,7 +148,81 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
     <span><span class="seta down">▲</span> / <span class="seta down">▼</span> variação negativa</span>
     <span><span class="seta neu">▲ ▼ —</span> sem direção definida</span>
   </div>
-  <p class="note" style="margin-top:14px">A seta indica para onde o número foi; a cor indica se isso é bom ou ruim. <strong style="color:var(--ink)">Investimento não recebe cor</strong> — gastar mais ou menos é decisão, não resultado. <strong style="color:var(--ink)">Desqualificação também não</strong>: uma alta pode significar lead pior ou mais triagem sendo feita, e o número sozinho não distingue os dois.</p>
+
+  <div class="cav" style="margin-top:16px">
+    <h3>O que conta como avanço e o que conta como fechamento</h3>
+    <p><strong>Avançaram</strong> = pessoas que chegaram a Reunião Agendada ou a alguma etapa posterior (Relacionamento Pós-Agenda, Reunião Não Realizada, Pago, Contratação, Contratos CCB). É contagem de pessoas, não de negócios: quem tem dois registros conta uma vez. <strong>"Novo" não entra</strong> — é etapa anterior ao Primeiro Contato, não posterior.</p>
+    <p><strong>Uma medida mais larga também existe:</strong> contando todo mundo que saiu do Primeiro Contato para qualquer etapa seguinte, inclusive "Em Andamento / WPP" e "Cadastro", os números são <strong>30, 93 e 79</strong> nas três semanas — ou 8,3%, 12,4% e 14,6%. Por essa régua o funil está melhorando. A diferença entre as duas medidas é grande porque "Em Andamento / WPP" concentra a maior parte do movimento e ainda não é compromisso agendado.</p>
+    <p><strong>Fechamentos</strong> = "Pago" no pipeline de Vendas mais qualquer etapa do pipeline de Contratos CCB. <strong>% avançaram</strong> usa como base os contatos identificados de cada semana (361, 752 e 542).</p>
+  </div>
+
+  <h3 style="font-size:15px;margin:30px 0 4px">As três semanas em gráfico</h3>
+  <p class="note" style="margin-bottom:12px">Custo por lead em reais, e as três taxas que medem qualidade.</p>
+  <div style="border:1px solid var(--border);border-radius:3px;background:var(--surface);padding:16px 12px">
+  <svg viewBox="0 0 380 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" role="img" aria-label="Custo por lead e taxas de qualidade nas três semanas">
+    <text x="8" y="16" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Custo por lead</text>
+    <line x1="8" y1="160" x2="372" y2="160" stroke="currentColor" stroke-width="1" opacity=".35"/>
+    <rect x="40" y="52" width="72" height="108" fill="var(--blue)" opacity=".9"/>
+    <rect x="150" y="99" width="72" height="61" fill="var(--blue)" opacity=".9"/>
+    <rect x="260" y="94" width="72" height="66" fill="var(--blue)" opacity=".9"/>
+    <text x="76" y="44" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="currentColor">R$ 29,48</text>
+    <text x="186" y="91" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="currentColor">R$ 16,75</text>
+    <text x="296" y="86" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="currentColor">R$ 18,01</text>
+    <text x="76" y="176" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">01–08/09</text>
+    <text x="186" y="176" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">09–15/09</text>
+    <text x="296" y="176" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">16–22/09</text>
+
+    <text x="8" y="222" font-family="Archivo, sans-serif" font-size="13" font-weight="600" fill="currentColor">Taxas de qualidade</text>
+    <line x1="8" y1="400" x2="372" y2="400" stroke="currentColor" stroke-width="1" opacity=".35"/>
+    <line x1="8" y1="345" x2="372" y2="345" stroke="currentColor" stroke-width="1" opacity=".12"/>
+    <line x1="8" y1="290" x2="372" y2="290" stroke="currentColor" stroke-width="1" opacity=".12"/>
+    <text x="376" y="348" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor" opacity=".5" text-anchor="end">25%</text>
+    <text x="376" y="293" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor" opacity=".5" text-anchor="end">50%</text>
+
+    <rect x="42" y="341" width="22" height="59" fill="var(--crit)"/>
+    <rect x="67" y="290" width="22" height="110" fill="var(--orange)"/>
+    <rect x="92" y="392" width="22" height="8" fill="var(--aqua)"/>
+    <text x="53" y="336" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">27,1</text>
+    <text x="78" y="285" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">50,5</text>
+    <text x="103" y="387" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">3,6</text>
+
+    <rect x="157" y="378" width="22" height="22" fill="var(--crit)"/>
+    <rect x="182" y="290" width="22" height="110" fill="var(--orange)"/>
+    <rect x="207" y="395" width="22" height="5" fill="var(--aqua)"/>
+    <text x="168" y="373" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">9,9</text>
+    <text x="193" y="285" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">50,6</text>
+    <text x="218" y="390" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">2,4</text>
+
+    <rect x="272" y="376" width="22" height="24" fill="var(--crit)"/>
+    <rect x="297" y="312" width="22" height="88" fill="var(--orange)"/>
+    <rect x="322" y="397" width="22" height="3" fill="var(--aqua)"/>
+    <text x="283" y="371" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">10,8</text>
+    <text x="308" y="307" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">40,3</text>
+    <text x="333" y="392" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor">1,3</text>
+
+    <text x="78" y="416" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">01–08/09</text>
+    <text x="193" y="416" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">09–15/09</text>
+    <text x="308" y="416" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="currentColor" opacity=".7">16–22/09</text>
+
+    <rect x="8" y="428" width="10" height="10" fill="var(--crit)"/><text x="23" y="437" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor">% desq.</text>
+    <rect x="98" y="428" width="10" height="10" fill="var(--orange)"/><text x="113" y="437" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor">% crédito</text>
+    <rect x="198" y="428" width="10" height="10" fill="var(--aqua)"/><text x="213" y="437" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor">% avançaram</text>
+  </svg>
+  </div>
+
+  <div class="destaque c">
+    <h3>Não houve fechamento na semana 16 a 22</h3>
+    <p><strong>O número correto é zero.</strong> A versão anterior deste relatório trazia 1 fechamento nesta linha — estava errado. O contrato que aparecia aqui pertencia a um lead de 10 de agosto, e foi retirado quando unificamos a base pela data de criação do contato. A linha da tabela não havia sido atualizada.</p>
+    <p>A série correta de fechamentos é <strong>2, 1 e 0</strong>. Os dois da primeira semana e o um da segunda seguem válidos.</p>
+    <p><strong>Por que não há o que mostrar sobre um fechamento desta semana:</strong> porque não existe. Os leads de 16 a 22 têm de 1 a 7 dias, e nenhum chegou a Pago ou a Contratos CCB. A semana registra 6 reuniões agendadas e 1 relacionamento pós-agenda — é daí que um fechamento sairia, se sair.</p>
+  </div>
+
+  <div class="destaque w">
+    <h3>O avanço cai nas três semanas — e parte disso é só tempo</h3>
+    <p>13, 18 e 7 pessoas avançaram nas três semanas: <strong>3,6%, 2,4% e 1,3%</strong>. A direção é ruim, mas a comparação é injusta com a última semana.</p>
+    <p>Reunião agendada leva dias para aparecer. Os leads de 01 a 08/09 tiveram até três semanas para avançar; os de 16 a 22 tiveram entre 1 e 7 dias. <strong>Parte da queda é maturação, não qualidade.</strong> Só a próxima apuração dirá quanto.</p>
+    <p>O que <strong>não</strong> é efeito de tempo: a segunda semana teve mais que o dobro de leads da primeira e gerou apenas 5 avanços a mais. A taxa caiu com mais volume — e isso é sinal, não maturação.</p>
+  </div>
 </section>
 
 <section>
@@ -205,7 +279,7 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
 
 <section>
   <h2>Conjunto de Anúncios · Os Públicos</h2>
-  <p class="note"><strong style="color:var(--ink)">Leads Meta</strong> é o que a plataforma contou, e é a base do custo por lead. <strong style="color:var(--ink)">Leads CRM</strong> é quanto disso chegou identificado no CRM — cobertura de <strong style="color:var(--ink)">88,4%</strong> (504 de 570). <strong style="color:var(--ink)">Crédito</strong> = descartados por "Empréstimo" ou "Capital de giro".</p>
+  <p class="note"><strong style="color:var(--ink)">Leads Meta</strong> é o que a plataforma contou, e é a base do custo por lead. <strong style="color:var(--ink)">Leads CRM</strong> é quanto disso chegou identificado no CRM — cobertura de <strong style="color:var(--ink)">93,0%</strong> — 504 dos 542 contatos que o CRM registrou na semana. <strong style="color:var(--ink)">Crédito</strong> = descartados por "Empréstimo" ou "Capital de giro".</p>
   <div class="tbl">
     <table>
       <thead><tr><th>Conjunto</th><th>Investimento</th><th>Leads Meta</th><th>Custo / lead</th><th>Leads CRM</th><th>% desq.</th><th>% crédito</th></tr></thead>
@@ -227,6 +301,79 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
     <p>O <strong>INTER-INVEST</strong> entrega lead a R$ 9,90 — o mais barato da conta — mas é o que mais desqualifica (15,2%) e o que mais traz gente buscando crédito (7,2%).</p>
     <p>O <strong>LAL-100K SP</strong> custa R$ 21,82, mais que o dobro, e tem a menor taxa de descarte da semana: <strong>3,8%, com zero casos de busca por crédito</strong>.</p>
     <p>Os dois seguem no ar porque cumprem funções diferentes: um traz volume barato, o outro traz qualidade cara. <strong>Decidir apenas pelo custo por lead levaria a cortar o público mais limpo da conta</strong> — e é por isso que este relatório sempre mostra as duas medidas lado a lado.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Os Anúncios · Os Criativos</h2>
+  <p class="note">Todos os números desta seção são <strong style="color:var(--ink)">só da semana 16 a 22</strong>. Primeira semana em que o CRM registra o anúncio de origem — o campo passou a funcionar em 16/09.</p>
+
+  <h3 style="font-size:15px;margin:26px 0 4px">Ranking · do melhor para o pior</h3>
+  <p class="note" style="margin-bottom:12px">Ordenado pela taxa de desqualificação.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Anúncio</th><th>Investimento</th><th>Leads Meta</th><th>Custo / lead</th><th>Leads CRM</th><th>% desq.</th><th>Crédito</th><th>Avanços</th></tr></thead>
+      <tbody>
+        <tr class="ok"><td class="name mono">SP_MG_RJ<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">LAL-100K SP</span></td><td>R$ 2.630,62</td><td>121</td><td>R$ 21,74</td><td>105</td><td style="color:var(--good-ink);font-weight:600">3,8%</td><td style="color:var(--good-ink);font-weight:600">0</td><td style="color:var(--good-ink);font-weight:600">2</td></tr>
+        <tr><td class="name mono">COMPORT<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">COMPORT-EMPRESARIO</span></td><td>R$ 1.321,49</td><td>59</td><td>R$ 22,40</td><td>59</td><td>8,5%</td><td>3</td><td>0</td></tr>
+        <tr><td class="name mono">AMPLO_SUL_SUDESTE<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">AMPLO — 3 e 4</span></td><td>R$ 833,99</td><td>73</td><td style="color:var(--good-ink)">R$ 11,42</td><td>65</td><td>12,3%</td><td>3</td><td>1</td></tr>
+        <tr class="hl"><td class="name mono">INTER-INVEST<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">INTER-INVEST</span></td><td>R$ 1.373,68</td><td>140</td><td style="color:var(--good-ink);font-weight:600">R$ 9,81</td><td>138</td><td style="color:var(--crit-ink);font-weight:600">15,2%</td><td style="color:var(--crit-ink);font-weight:600">10</td><td>1</td></tr>
+        <tr class="hl"><td class="name mono">AMPLO_SUL_SUDESTE<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">AMPLO — 5 a 7</span></td><td>R$ 840,95</td><td>65</td><td style="color:var(--good-ink)">R$ 12,94</td><td>46</td><td style="color:var(--crit-ink);font-weight:600">15,2%</td><td>2</td><td>1</td></tr>
+        <tr class="vazia"><td class="name mono">EST_04_09-04 · Cópia<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">2 peças — SP-AP e LAL-ATIVOS</span></td><td>R$ 2.993,35</td><td>101</td><td>R$ 29,64</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr class="vazia"><td class="name mono">Outros 29 anúncios<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">peças residuais de todos os conjuntos</span></td><td>R$ 273,64</td><td>11</td><td>R$ 24,88</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total · 16 a 22/09</td><td>R$ 10.267,72</td><td>570</td><td>R$ 18,01</td><td>504</td><td>10,8%</td><td>27</td><td>7</td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="cav" style="margin-top:14px">
+    <h3>Por que uma linha cobre dois anúncios</h3>
+    <p>O anúncio <span class="mono">EST_04_09-04 · Cópia</span> existe em duas peças diferentes — uma no conjunto SP-AP, outra no LAL-ATIVOS — e as duas carregam o mesmo nome antigo. O export de anúncios da semana <strong>não traz o identificador da peça</strong>, apenas o nome, então os dois valores vêm somados e não há como separá-los sem um novo export. Por isso essa linha não recebe as colunas de CRM: seriam duas realidades diferentes no mesmo número.</p>
+    <p>Os dados desses dois públicos estão corretos e separados na tabela de conjuntos, acima: <strong>SP-AP R$ 1.639,97 / 50 leads / R$ 32,80</strong> e <strong>LAL-ATIVOS R$ 1.509,82 / 60 leads / R$ 25,16</strong>.</p>
+  </div>
+
+  <h3 style="font-size:15px;margin:30px 0 4px">Quantos criativos há em cada conjunto</h3>
+  <p class="note" style="margin-bottom:12px">Contagem por identificador de peça, base 01 a 22/09 — é o único export que traz o identificador do anúncio junto com o conjunto. <strong style="color:var(--ink)">Gastaram</strong> são as peças que consumiram verba; <strong style="color:var(--ink)">sem conversão</strong> são as que gastaram e não geraram um único lead.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Conjunto</th><th>Criativos</th><th>Gastaram</th><th>Geraram lead</th><th>Sem conversão</th><th>Verba sem conversão</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td class="name mono">LAL-ATIVOS-0-3</td><td>29</td><td>19</td><td>7</td><td style="color:var(--crit-ink);font-weight:600">12</td><td style="color:var(--crit-ink)">R$ 90,75</td></tr>
+        <tr class="hl"><td class="name mono">LAL-100K SP</td><td>19</td><td>16</td><td>6</td><td style="color:var(--crit-ink);font-weight:600">10</td><td style="color:var(--crit-ink);font-weight:600">R$ 110,72</td></tr>
+        <tr><td class="name mono">AMPLO — 5 a 7</td><td>18</td><td>15</td><td>6</td><td>9</td><td>R$ 20,46</td></tr>
+        <tr><td class="name mono">INTER-INVEST</td><td>17</td><td>13</td><td>6</td><td>7</td><td style="color:var(--good-ink)">R$ 10,91</td></tr>
+        <tr><td class="name mono">AMPLO — 3 e 4</td><td>16</td><td>14</td><td>7</td><td>7</td><td>R$ 20,89</td></tr>
+        <tr><td class="name mono">COMPORT-EMPRESARIO</td><td>15</td><td>15</td><td>6</td><td>9</td><td>R$ 72,49</td></tr>
+        <tr class="ok"><td class="name mono">SP-AP</td><td>9</td><td>9</td><td style="color:var(--good-ink);font-weight:600">7</td><td style="color:var(--good-ink);font-weight:600">2</td><td style="color:var(--good-ink)">R$ 23,74</td></tr>
+        <tr class="vazia"><td class="name mono">Conjuntos pausados<br><span style="color:var(--muted);font-weight:400;font-size:11.5px">LAL-30K · AMPLO 1 e 2 · e outros 4</span></td><td>35</td><td>3</td><td>1</td><td>2</td><td>R$ 40,75</td></tr>
+      </tbody>
+      <tfoot><tr><td>Total</td><td>158</td><td>104</td><td>46</td><td>58</td><td>R$ 390,71</td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="destaque w">
+    <h3>Mais da metade dos criativos que gastam não geram um único lead</h3>
+    <p>No mês, <strong>104 peças consumiram verba e apenas 46 geraram algum lead</strong>. As outras <strong>58 gastaram R$ 390,71 e não trouxeram nada</strong> — 1,1% do investimento do mês.</p>
+    <p>Na semana 16 a 22 o padrão se repete na mesma proporção: <strong>36 nomes de anúncio gastaram, 12 geraram lead, 24 não geraram nenhum</strong>, consumindo <strong>R$ 146,19 — 1,4% da verba da semana</strong>.</p>
+    <p><strong>O dinheiro em si é pouco e não é recuperável</strong> — o orçamento é definido no conjunto, não na peça, então pausar essas 58 não devolve R$ 390,71 à conta. Esse valor apenas migra para os criativos que ficam.</p>
+    <p><strong>O que importa aqui não é a verba, é o risco.</strong> Cada peça extra é uma chance de o leilão do Meta concentrar entrega num anúncio com amostra pequena e resultado ruim. Os dois conjuntos com mais peças acumuladas — <strong>LAL-ATIVOS com 29 e LAL-100K SP com 19</strong> — são também os dois com maior verba desperdiçada e, no caso do LAL-ATIVOS, o pior custo por lead entre os públicos com volume.</p>
+    <p><strong>A recomendação é limpeza, não corte de verba:</strong> desativar as peças sem conversão nos conjuntos com mais de 15 criativos. Não muda o investimento e reduz a chance de o leilão escolher errado.</p>
+  </div>
+
+  <div class="destaque c">
+    <h3>Quanto mais barato o lead, pior a qualidade</h3>
+    <p>Entre os cinco criativos que dá para isolar com segurança, ordenados pelo custo por lead da semana:</p>
+    <p><span class="mono">INTER-INVEST — R$ 9,81 &nbsp;→&nbsp; <strong>15,2% de descarte, 10 casos de crédito</strong><br>AMPLO_SUL_SUDESTE 3e4 — R$ 11,42 &nbsp;→&nbsp; 12,3%<br>AMPLO_SUL_SUDESTE 5a7 — R$ 12,94 &nbsp;→&nbsp; 15,2%<br>SP_MG_RJ — R$ 21,74 &nbsp;→&nbsp; <strong>3,8%, zero crédito, 2 avanços</strong><br>COMPORT — R$ 22,40 &nbsp;→&nbsp; 8,5%</span></p>
+    <p>Os três mais baratos descartam <strong>14,2%</strong> em média. Os dois mais caros, <strong>6,2%</strong>. O anúncio mais barato da conta é o que mais traz gente buscando empréstimo — <strong>10 dos 27 casos da semana vieram só dele</strong>.</p>
+    <p><strong>Mas pagar mais também não garante lead bom.</strong> O conjunto LAL-ATIVOS custa R$ 25,16 por lead — mais caro que todos os cinco acima — e ainda descarta 14,6%. Caro e sujo ao mesmo tempo. A relação é uma tendência clara, não uma regra.</p>
+    <p><strong>A leitura prática:</strong> distribuir verba apenas pelo custo por lead ampliaria exatamente o anúncio que mais gera descarte. E cortar apenas pelo custo tiraria do ar o público mais limpo da conta.</p>
+  </div>
+
+  <div class="destaque">
+    <h3>Por que ainda não dá para separar o criativo do público</h3>
+    <p>Cada conjunto roda hoje <strong>um criativo dominante, feito para ele</strong>. Verificamos peça por peça pelo identificador: nenhum anúncio aparece em dois conjuntos diferentes. Quando o mesmo nome aparece em dois conjuntos, são duas peças distintas que dividem o nome — não a mesma peça rodando nos dois.</p>
+    <p>Isso significa que, nesta semana, <strong>anúncio e público são a mesma variável</strong> — quando o resultado muda, não há como saber se foi a peça ou quem a viu.</p>
+    <p><strong>O teste que resolve:</strong> rodar um mesmo criativo em dois ou três conjuntos diferentes, ao mesmo tempo. Se o resultado mudar entre eles, o peso é do público. Se não mudar, é da comunicação. É um ajuste de estrutura, não de verba, e pode ser feito já.</p>
   </div>
 </section>
 
@@ -301,51 +448,6 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
 </section>
 
 <section>
-  <h2>Os Anúncios · Os Criativos</h2>
-  <p class="note">Primeira semana em que o CRM registra o anúncio de origem — o campo passou a funcionar em 16/09. Os nomes abaixo são os novos, que indicam o conjunto de destino.</p>
-
-  <h3 style="font-size:15px;margin:26px 0 4px">Ranking · do melhor para o pior</h3>
-  <p class="note" style="margin-bottom:12px">Ordenado pela taxa de desqualificação.</p>
-  <div class="tbl">
-    <table>
-      <thead><tr><th>Anúncio</th><th>Investimento</th><th>Leads Meta</th><th>Custo / lead</th><th>Leads CRM</th><th>% desq.</th><th>Crédito</th><th>Avanços</th></tr></thead>
-      <tbody>
-        <tr class="ok"><td class="name mono">SP_MG_RJ</td><td>R$ 6.444,80</td><td>237</td><td>R$ 27,19</td><td>105</td><td style="color:var(--good-ink);font-weight:600">3,8%</td><td style="color:var(--good-ink);font-weight:600">0</td><td style="color:var(--good-ink);font-weight:600">2</td></tr>
-        <tr><td class="name mono">SP-AP</td><td>R$ 3.257,56</td><td>73</td><td style="color:var(--crit-ink)">R$ 44,62</td><td>39</td><td style="color:var(--good-ink)">7,7%</td><td>2</td><td>1</td></tr>
-        <tr><td class="name mono">COMPORT</td><td>R$ 5.655,70</td><td>219</td><td>R$ 25,83</td><td>59</td><td>8,5%</td><td>3</td><td>0</td></tr>
-        <tr><td class="name mono">AMPLO_SUL_SUDESTE <span style="color:var(--muted);font-weight:400">· 3 e 4</span></td><td>R$ 3.791,54</td><td>264</td><td style="color:var(--good-ink)">R$ 14,36</td><td>65</td><td>12,3%</td><td>3</td><td>1</td></tr>
-        <tr><td class="name mono">LAL-ATIVOS-0-3</td><td>R$ 3.659,83</td><td>120</td><td style="color:var(--crit-ink)">R$ 30,50</td><td>45</td><td>13,3%</td><td>2</td><td>0</td></tr>
-        <tr class="hl"><td class="name mono">INTER-INVEST</td><td>R$ 4.791,79</td><td>418</td><td style="color:var(--good-ink);font-weight:600">R$ 11,46</td><td>138</td><td style="color:var(--crit-ink);font-weight:600">15,2%</td><td style="color:var(--crit-ink);font-weight:600">10</td><td>1</td></tr>
-        <tr class="hl"><td class="name mono">AMPLO_SUL_SUDESTE <span style="color:var(--muted);font-weight:400">· 5 a 7</span></td><td>R$ 3.833,89</td><td>250</td><td style="color:var(--good-ink)">R$ 15,34</td><td>46</td><td style="color:var(--crit-ink);font-weight:600">15,2%</td><td>2</td><td>1</td></tr>
-        <tr class="vazia"><td class="name mono">Outros — nomes antigos, sem renomear</td><td>R$ 2.629,86</td><td>126</td><td>R$ 20,87</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-      </tbody>
-      <tfoot><tr><td>Total do mês · 01 a 22/09</td><td>R$ 34.064,97</td><td>1.707</td><td>R$ 19,95</td><td>497</td><td>10,9%</td><td>22</td><td>6</td></tr></tfoot>
-    </table>
-  </div>
-  <div class="cav" style="margin-top:14px">
-    <h3>Como ler as colunas desta tabela</h3>
-    <p><strong>Investimento, Leads Meta e Custo / lead são do mês inteiro (01 a 22/09)</strong>, porque é assim que o Meta consolida o histórico de um anúncio. As três se dividem entre si: R$ 5.655,70 ÷ 219 = R$ 25,83.</p>
-    <p><strong>Leads CRM, % desq., Crédito e Avanços são só da semana 16 a 22.</strong> Por isso os dois blocos não se dividem entre si — o numerador é do mês e o denominador da semana. Onde o mesmo nome cobre mais de um anúncio, os valores estão somados.</p>
-  </div>
-
-  <div class="destaque c">
-    <h3>Quanto mais barato o lead, pior a qualidade — com uma exceção</h3>
-    <p>Ordenando os anúncios pelo custo por lead do mês, a tendência aparece:</p>
-    <p><span class="mono">INTER-INVEST — R$ 11,46 &nbsp;→&nbsp; <strong>15,2% de descarte, 10 casos de crédito</strong><br>AMPLO_SUL_SUDESTE 3e4 — R$ 14,36 &nbsp;→&nbsp; 12,3%<br>AMPLO_SUL_SUDESTE 5a7 — R$ 15,34 &nbsp;→&nbsp; 15,2%<br>COMPORT — R$ 25,83 &nbsp;→&nbsp; 8,5%<br>SP_MG_RJ — R$ 27,19 &nbsp;→&nbsp; <strong>3,8%, zero crédito, 2 avanços</strong><br>LAL-ATIVOS-0-3 — R$ 30,50 &nbsp;→&nbsp; 13,3% &nbsp;<strong>← quebra o padrão</strong><br>SP-AP — R$ 44,62 &nbsp;→&nbsp; 7,7%</span></p>
-    <p>Os três anúncios mais baratos descartam <strong>14,2%</strong> em média. Os quatro mais caros, <strong>8,3%</strong>. A direção é clara, mas <strong>não é uma linha reta</strong>: o LAL-ATIVOS-0-3 custa R$ 30,50 e descarta 13,3% — caro e sujo ao mesmo tempo.</p>
-    <p>O anúncio mais barato da conta é o que mais traz gente buscando empréstimo — <strong>10 dos 27 casos da semana vieram só dele</strong>. E o de melhor resultado custa quase três vezes mais por lead.</p>
-    <p><strong>A leitura prática:</strong> distribuir verba apenas pelo custo por lead ampliaria exatamente o anúncio que mais gera descarte. Mas o inverso também não funciona — pagar mais não garante lead melhor, como o LAL-ATIVOS-0-3 mostra.</p>
-  </div>
-
-  <div class="destaque">
-    <h3>Por que ainda não dá para separar o criativo do público</h3>
-    <p>Cada conjunto roda hoje <strong>um criativo próprio, feito para ele</strong>. Verificamos anúncio por anúncio: nenhum identificador de anúncio aparece em dois conjuntos diferentes. Quando o mesmo nome aparece em dois conjuntos, são duas peças distintas que dividem o nome, não a mesma peça rodando nos dois.</p>
-    <p>Isso significa que, nesta semana, <strong>anúncio e público são a mesma variável</strong> — quando o resultado muda, não há como saber se foi a peça ou quem a viu.</p>
-    <p><strong>O teste que resolve:</strong> rodar um mesmo criativo em dois ou três conjuntos diferentes, ao mesmo tempo. Se o resultado mudar entre eles, o peso é do público. Se não mudar, é da comunicação. É um ajuste de estrutura, não de verba, e pode ser feito já.</p>
-  </div>
-</section>
-
-<section>
   <h2>Leitura</h2>
   <blockquote class="c">
     Nove em cada dez anotações do comercial registram uma ligação que não chegou a falar com ninguém — "não atendeu", "caixa postal", "não chama". O gargalo da semana não é o lead recusar a oferta, é não conseguir alcançá-lo. Nenhuma mudança de campanha resolve isso.
@@ -374,7 +476,7 @@ footer{margin-top:50px;padding-top:18px;border-top:1px solid var(--border);font-
     </div>
     <div class="cav">
       <h3>Meta e CRM contam bases diferentes</h3>
-      <p>O Meta registrou 570 leads na semana; o CRM identificou o conjunto de origem em 504. A diferença de 66 não é perda de lead — é vínculo que ainda não foi registrado, e ele pode levar até 48 horas. Por isso o custo por lead usa sempre a contagem do Meta, e as taxas de qualidade usam a do CRM.</p>
+      <p>O Meta registrou 570 leads na semana; o CRM registrou 542 contatos e identificou o conjunto de origem em 504 deles — 93,0%. A diferença até os 570 do Meta não é perda de lead — é vínculo que ainda não foi registrado, e ele pode levar até 48 horas. Por isso o custo por lead usa sempre a contagem do Meta, e as taxas de qualidade usam a do CRM.</p>
     </div>
     <div class="cav">
       <h3>A comparação entre criativos ainda é frágil</h3>
